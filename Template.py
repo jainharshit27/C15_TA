@@ -37,6 +37,21 @@ def powerbar(ticks):
     h = power / 2
     pygame.draw.line(screen, pygame.Color("red"), (650, 550), (650, 550 - h), 10)
 
+#Create a function post_solve_arrow_hit(arbiter, space, data)
+    #a, b = arbiter.shapes
+    #position = arbiter.contact_point_set.points[0].point_a
+    #print(position)
+    #if position[0] == 599.0:
+        #b.collision_type = 0
+        #b.group = 1
+        #target_body = a.body
+        #arrow_body = b.body
+        #pivot_joint = pymunk.PivotJoint(arrow_body, target_body, position)
+        #phase = target_body.angle - arrow_body.angle
+        #gear_joint = pymunk.GearJoint(arrow_body, target_body, phase, 0.1)
+        #space.add(pivot_joint)
+        #space.add(gear_joint)
+        
 pygame.init()
 
 height = 600
@@ -70,6 +85,9 @@ rope_img = pygame.transform.scale(rope_img, (25,400))
 #Arrow
 arrow = Arrow(130,85)
 flying_arrows = []
+#handler = space.add_collision_handler(0, 1)
+#handler.data["flying_arrows"] = flying_arrows
+#handler.post_solve = post_solve_arrow_hit
 
 while True:
     screen.blit(bg, (0,0))
